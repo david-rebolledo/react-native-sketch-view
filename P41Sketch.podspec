@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.authors      = package['author']
   s.homepage     = package['homepage']
   s.platforms    = { :ios => "9.0", :tvos => "9.2" }
-  s.source       = { :git => "https://github.com/keshavkaul/react-native-sketch-view.git"}
+  s.source       = { :git => "https://github.com/david-rebolledo/react-native-sketch-view.git"}
   s.source_files = "ios/**/*.{h,m}"
   s.resources = ["ios/SketchView/SketchViewContainer.xib"]
 
