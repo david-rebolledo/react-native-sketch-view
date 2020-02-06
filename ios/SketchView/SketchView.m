@@ -9,12 +9,15 @@
 #import "SketchView.h"
 #import "PenSketchTool.h"
 #import "EraserSketchTool.h"
+#import "CircleSketchTool.h"
 
 @implementation SketchView
 {
     SketchTool *currentTool;
     SketchTool *penTool;
     SketchTool *eraseTool;
+    SketchTool *rectangleTool;
+    SketchTool *circleTool;
     
     UIColor *curSketchColor;
     CGFloat curSketchThickness;
@@ -36,6 +39,7 @@
     curSketchThickness = 5.0;
     penTool = [[PenSketchTool alloc] initWithTouchView:self];
     eraseTool = [[EraserSketchTool alloc] initWithTouchView:self];
+    circleTool = [[CircleSketchTool alloc] initWithTouchView:self];
     
     [self setToolType:SketchToolTypePen];
     
@@ -53,6 +57,12 @@
             break;
         case SketchToolTypeEraser:
             currentTool = eraseTool;
+            break;
+        case SketchToolTypeRectangle:
+            currentTool = penTool;
+            break;
+        case SketchToolTypeCircle:
+            currentTool = circleTool;
             break;
         default:
             currentTool = penTool;
