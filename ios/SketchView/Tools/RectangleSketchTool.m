@@ -1,15 +1,15 @@
 //
-//  CircleSketchTool.m
+//  RectangleSketchTool.m
 //  RNSketchView
 //
 //  Created by NightFury on 06/02/2020.
 //  Copyright © 2020 Facebook. All rights reserved.
 //
 
-#import "CircleSketchTool.h"
+#import "RectangleSketchTool.h"
 #import "Paint.h"
 
-@implementation CircleSketchTool
+@implementation RectangleSketchTool
 {
     Paint *paint;
 }
@@ -49,7 +49,7 @@
 }
 
 -(void)setToolColorFromHexString:(NSString *)colorString {
-    [self setToolColor:[ShapeTrackingSketchTool colorFromHexString:colorString]];
+    [self setToolColor:[RectangleTrackingSketchTool colorFromHexString:colorString]];
      
 }
 -(void)setToolColor:(UIColor *)color
@@ -61,5 +61,4 @@
 {
     return paint.color;
 }
-
 @end

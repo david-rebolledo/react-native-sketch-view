@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		39F70D6B23EC445600E88E29 /* CircleSketchTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F70D6A23EC445600E88E29 /* CircleSketchTool.m */; };
 		39F70D6E23EC492C00E88E29 /* ShapeTrackingSketchTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F70D6D23EC492C00E88E29 /* ShapeTrackingSketchTool.m */; };
+		39F70D7223EC58E300E88E29 /* RectangleSketchTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F70D7123EC58E300E88E29 /* RectangleSketchTool.m */; };
+		39F70D7523EC591D00E88E29 /* RectangleTrackingSketchTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F70D7423EC591D00E88E29 /* RectangleTrackingSketchTool.m */; };
 		6B37E23B1E9D4235006883C6 /* SketchFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B37E2351E9D4235006883C6 /* SketchFile.m */; };
 		6B37E23C1E9D4235006883C6 /* SketchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B37E2371E9D4235006883C6 /* SketchView.m */; };
 		6B37E23D1E9D4235006883C6 /* SketchViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B37E2391E9D4235006883C6 /* SketchViewContainer.m */; };
@@ -97,6 +99,10 @@
 		39F70D6A23EC445600E88E29 /* CircleSketchTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CircleSketchTool.m; path = SketchView/Tools/CircleSketchTool.m; sourceTree = SOURCE_ROOT; };
 		39F70D6C23EC492C00E88E29 /* ShapeTrackingSketchTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShapeTrackingSketchTool.h; sourceTree = SOURCE_ROOT; };
 		39F70D6D23EC492C00E88E29 /* ShapeTrackingSketchTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShapeTrackingSketchTool.m; sourceTree = SOURCE_ROOT; };
+		39F70D7023EC58E300E88E29 /* RectangleSketchTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RectangleSketchTool.h; path = SketchView/Tools/RectangleSketchTool.h; sourceTree = SOURCE_ROOT; };
+		39F70D7123EC58E300E88E29 /* RectangleSketchTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RectangleSketchTool.m; path = SketchView/Tools/RectangleSketchTool.m; sourceTree = SOURCE_ROOT; };
+		39F70D7323EC591D00E88E29 /* RectangleTrackingSketchTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RectangleTrackingSketchTool.h; path = SketchView/Tools/RectangleTrackingSketchTool.h; sourceTree = SOURCE_ROOT; };
+		39F70D7423EC591D00E88E29 /* RectangleTrackingSketchTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RectangleTrackingSketchTool.m; path = SketchView/Tools/RectangleTrackingSketchTool.m; sourceTree = SOURCE_ROOT; };
 		6B37E2341E9D4235006883C6 /* SketchFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SketchFile.h; path = SketchView/SketchFile.h; sourceTree = SOURCE_ROOT; };
 		6B37E2351E9D4235006883C6 /* SketchFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SketchFile.m; path = SketchView/SketchFile.m; sourceTree = SOURCE_ROOT; };
 		6B37E2361E9D4235006883C6 /* SketchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SketchView.h; path = SketchView/SketchView.h; sourceTree = SOURCE_ROOT; };
@@ -170,6 +176,10 @@
 				39F70D6A23EC445600E88E29 /* CircleSketchTool.m */,
 				39F70D6C23EC492C00E88E29 /* ShapeTrackingSketchTool.h */,
 				39F70D6D23EC492C00E88E29 /* ShapeTrackingSketchTool.m */,
+				39F70D7023EC58E300E88E29 /* RectangleSketchTool.h */,
+				39F70D7123EC58E300E88E29 /* RectangleSketchTool.m */,
+				39F70D7323EC591D00E88E29 /* RectangleTrackingSketchTool.h */,
+				39F70D7423EC591D00E88E29 /* RectangleTrackingSketchTool.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -340,7 +350,9 @@
 				6B37E24C1E9D4257006883C6 /* PathTrackingSketchTool.m in Sources */,
 				6B37E24E1E9D4257006883C6 /* SketchTool.m in Sources */,
 				6B37E23C1E9D4235006883C6 /* SketchView.m in Sources */,
+				39F70D7223EC58E300E88E29 /* RectangleSketchTool.m in Sources */,
 				B3E7B58A1CC2AC0600A0062D /* RNSketchViewManager.m in Sources */,
+				39F70D7523EC591D00E88E29 /* RectangleTrackingSketchTool.m in Sources */,
 				6B37E24D1E9D4257006883C6 /* PenSketchTool.m in Sources */,
 				6B37E24A1E9D4257006883C6 /* EraserSketchTool.m in Sources */,
 				6B37E23B1E9D4235006883C6 /* SketchFile.m in Sources */,
