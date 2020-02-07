@@ -185,7 +185,6 @@
 -(UIImage *)drawBitmap
 {
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0.0);
-    CGContextSetLineWidth(UIGraphicsGetCurrentContext() , curSketchThickness);
     [self drawRect:self.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
