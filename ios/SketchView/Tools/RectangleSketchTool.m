@@ -22,9 +22,9 @@
     
     [self setToolColor:[UIColor blackColor]];
     [self setToolThickness:5];
-    
-    [self.path setLineCapStyle:kCGLineCapRound];
-    [self.path setLineJoinStyle:kCGLineJoinRound];
+//    
+//    [self.path setLineCapStyle:kCGLineCapRound];
+//    [self.path setLineJoinStyle:kCGLineJoinRound];
     
     
     return self;
@@ -34,6 +34,7 @@
 {
     [paint.color setStroke];
     [self.path stroke];
+    
 }
 
 -(void)setToolThickness:(CGFloat)thickness

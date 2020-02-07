@@ -61,10 +61,10 @@
             currentTool = eraseTool;
             break;
         case SketchToolTypeRectangle:
-            currentTool = penTool;
+            currentTool = rectangleTool;
             break;
         case SketchToolTypeCircle:
-            currentTool = rectangleTool;
+            currentTool = circleTool;
             break;
         default:
             currentTool = penTool;
@@ -185,6 +185,7 @@
 -(UIImage *)drawBitmap
 {
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0.0);
+    CGContextSetLineWidth(UIGraphicsGetCurrentContext() , curSketchThickness);
     [self drawRect:self.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

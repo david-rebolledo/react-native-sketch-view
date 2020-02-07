@@ -10,7 +10,7 @@
 
 
 @interface RectangleTrackingSketchTool : SketchTool
-@property CGPoint *startPoint;
+@property CGPoint startPoint;
 @property UIBezierPath *path;
 + (UIColor *)colorFromHexString:(NSString *)hexString;
 @end

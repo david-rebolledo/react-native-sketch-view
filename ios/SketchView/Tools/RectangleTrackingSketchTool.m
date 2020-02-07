@@ -29,16 +29,11 @@
     [_path removeAllPoints];
 }
 -(void)touchesBeganWith:(CGPoint)point{
-    self.startPoint = &(point);
+    self.startPoint = point;
 }
 -(void)touchesMovedWith:(CGPoint)point{
-    [_path addArcWithCenter:CGPointMake(
-                                        (self.startPoint->x + point.x) / 2,
-                                        (self.startPoint->y + point.y) / 2)
-                     radius:50
-                 startAngle:2
-                   endAngle:2
-                  clockwise:true];
+    self.path = [UIBezierPath bezierPathWithRect:
+    CGRectMake(_startPoint.x, _startPoint.y, point.x - _startPoint.x, point.y - _startPoint.y)];
 }
 -(void)touchesEndedWith{
     [self.touchView setNeedsDisplay];
@@ -47,20 +42,16 @@
 {
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInView:self.touchView];
-    self.startPoint = &(point);
+    self.startPoint = point;
 }
 
 -(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInView:self.touchView];
-    [_path addArcWithCenter:CGPointMake(
-                           (self.startPoint->x + point.x) / 2,
-                           (self.startPoint->y + point.y) / 2)
-                     radius:50
-                 startAngle:2
-                   endAngle:2
-                  clockwise:true];
+    self.path = [UIBezierPath bezierPathWithRect:
+                 CGRectMake(_startPoint.x, _startPoint.y, point.x - _startPoint.x, point.y - _startPoint.y)];
+    
     [self.touchView setNeedsDisplay];
 }
 
@@ -68,13 +59,8 @@
 {
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInView:self.touchView];
-    [_path addArcWithCenter:CGPointMake(
-              (self.startPoint->x + point.x) / 2,
-              (self.startPoint->y + point.y) / 2)
-                     radius:50
-                 startAngle:2
-                   endAngle:2
-                  clockwise:true];
+    self.path = [UIBezierPath bezierPathWithRect:
+    CGRectMake(_startPoint.x, _startPoint.y, point.x - _startPoint.x, point.y - _startPoint.y)];
     [self.touchView setNeedsDisplay];
 }
 
@@ -82,5 +68,4 @@
 {
     [self touchesEnded:touches withEvent:event];
 }
-
 @end
