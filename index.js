@@ -127,6 +127,10 @@ SketchView.constants = {
       id: 3,
       name: 'Circle'
     },
+    text: {
+      id: 4,
+      name: 'Text'
+    }
   }
 };
 
