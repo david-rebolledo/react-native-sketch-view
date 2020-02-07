@@ -24,6 +24,9 @@
     CGFloat curSketchThickness;
     
     UIImage *incrementalImage;
+    bool isText;
+    NSString *text;
+    CGPoint point;
 }
 
 -(instancetype)initWithCoder:(NSCoder *)aDecoder
@@ -42,7 +45,8 @@
     eraseTool = [[EraserSketchTool alloc] initWithTouchView:self];
     rectangleTool = [[RectangleSketchTool alloc] initWithTouchView:self];
     circleTool = [[CircleSketchTool alloc] initWithTouchView:self];
-    
+    isText = false;
+    text = @"";
     [self setToolType:SketchToolTypePen];
     
     [self setBackgroundColor:[UIColor clearColor]];
@@ -65,6 +69,9 @@
             break;
         case SketchToolTypeCircle:
             currentTool = circleTool;
+            break;
+        case SketchToolTypeText:
+            isText = true;
             break;
         default:
             currentTool = penTool;
@@ -106,7 +113,17 @@
     [self setThickness:thickness];
     [self setToolType:type];
     
-    if (arrPoints.count > 0) {
+    if (type == SketchToolTypeText) {
+        text = tmp1[@"text"];
+        if (arrPoints.count > 0) {
+            point.x = [arrPoints[arrPoints.count - 1][@"x"] floatValue];
+            point.y = [arrPoints[arrPoints.count - 1][@"y"] floatValue];
+        } else {
+            point = CGPointMake(0, 0);
+        }
+        
+        [self takeSnapshot];
+    } else if (arrPoints.count > 0) {
         CGPoint pt;
         pt.x = [arrPoints[0][@"x"] floatValue];
         pt.y = [arrPoints[0][@"y"] floatValue];
@@ -120,7 +137,6 @@
         
         [currentTool touchesEndedWith];
         [self takeSnapshot];
-        
     }
 }
 -(void)setViewImage:(UIImage *)image
@@ -155,31 +171,61 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [currentTool touchesBegan:touches withEvent:event];
+    if (!isText)
+        [currentTool touchesBegan:touches withEvent:event];
+    else {
+        UITouch *touch = [touches anyObject];
+        CGPoint p = [touch locationInView:self];
+        point = p;
+    }
 }
 
 -(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [currentTool touchesMoved:touches withEvent:event];
+    if (!isText)
+        [currentTool touchesMoved:touches withEvent:event];
+    else {
+        UITouch *touch = [touches anyObject];
+        CGPoint p = [touch locationInView:self];
+        point = p;
+    }
 }
 
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [currentTool touchesEnded:touches withEvent:event];
+    if (!isText)
+        [currentTool touchesEnded:touches withEvent:event];
+    else {
+        UITouch *touch = [touches anyObject];
+        CGPoint p = [touch locationInView:self];
+        point = p;
+    }
 //    [currentTool clear];//    [self takeSnapshot];
     
 }
 
 -(void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [currentTool touchesCancelled:touches withEvent:event];
+    if (!isText)
+        [currentTool touchesCancelled:touches withEvent:event];
+    else {
+        UITouch *touch = [touches anyObject];
+        CGPoint p = [touch locationInView:self];
+        point = p;
+    }
 //    [currentTool clear];//    [self takeSnapshot];
 }
 
 -(void)takeSnapshot
 {
-    [self setViewImage:[self drawBitmap]];
-    [currentTool clear];
+    if(isText) {
+        [self drawText:text atPoint:point];
+        text = @"";
+        point = CGPointMake(0, 0);
+    } else {
+        [self setViewImage:[self drawBitmap]];
+        [currentTool clear];
+    }
 }
 
 -(UIImage *)drawBitmap
@@ -191,6 +237,19 @@
     return image;
 }
 
+-(UIImage *)drawText:(NSString*) text
+             atPoint:(CGPoint)   point
+{
+    UIFont *font = [UIFont boldSystemFontOfSize:12];
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0.0);
+    [self drawRect:self.bounds];
+    CGRect rect = CGRectMake(point.x, point.y, self.bounds.size.width, self.bounds.size.height);
+    [[UIColor whiteColor] set];
+    [text drawInRect:CGRectIntegral(rect) withAttributes:[[NSDictionary alloc] initWithObjectsAndKeys: font,NSFontAttributeName,nil]];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
 
+    return newImage;
+}
 
 @end

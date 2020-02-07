@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3947644123ED9D91001D791B /* TextSketchTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3947644023ED9D91001D791B /* TextSketchTool.m */; };
+		3947644423ED9E53001D791B /* TextTrackingSketchTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3947644323ED9E53001D791B /* TextTrackingSketchTool.m */; };
 		39F70D6B23EC445600E88E29 /* CircleSketchTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F70D6A23EC445600E88E29 /* CircleSketchTool.m */; };
 		39F70D6E23EC492C00E88E29 /* ShapeTrackingSketchTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F70D6D23EC492C00E88E29 /* ShapeTrackingSketchTool.m */; };
 		39F70D7223EC58E300E88E29 /* RectangleSketchTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F70D7123EC58E300E88E29 /* RectangleSketchTool.m */; };
@@ -95,6 +97,10 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNSketchView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNSketchView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3947643F23ED9D91001D791B /* TextSketchTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TextSketchTool.h; path = SketchView/Tools/TextSketchTool.h; sourceTree = SOURCE_ROOT; };
+		3947644023ED9D91001D791B /* TextSketchTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TextSketchTool.m; path = SketchView/Tools/TextSketchTool.m; sourceTree = SOURCE_ROOT; };
+		3947644223ED9E53001D791B /* TextTrackingSketchTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TextTrackingSketchTool.h; path = SketchView/Tools/TextTrackingSketchTool.h; sourceTree = SOURCE_ROOT; };
+		3947644323ED9E53001D791B /* TextTrackingSketchTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TextTrackingSketchTool.m; path = SketchView/Tools/TextTrackingSketchTool.m; sourceTree = SOURCE_ROOT; };
 		39F70D6923EC445600E88E29 /* CircleSketchTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CircleSketchTool.h; path = SketchView/Tools/CircleSketchTool.h; sourceTree = SOURCE_ROOT; };
 		39F70D6A23EC445600E88E29 /* CircleSketchTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CircleSketchTool.m; path = SketchView/Tools/CircleSketchTool.m; sourceTree = SOURCE_ROOT; };
 		39F70D6C23EC492C00E88E29 /* ShapeTrackingSketchTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShapeTrackingSketchTool.h; sourceTree = SOURCE_ROOT; };
@@ -180,6 +186,10 @@
 				39F70D7123EC58E300E88E29 /* RectangleSketchTool.m */,
 				39F70D7323EC591D00E88E29 /* RectangleTrackingSketchTool.h */,
 				39F70D7423EC591D00E88E29 /* RectangleTrackingSketchTool.m */,
+				3947643F23ED9D91001D791B /* TextSketchTool.h */,
+				3947644023ED9D91001D791B /* TextSketchTool.m */,
+				3947644223ED9E53001D791B /* TextTrackingSketchTool.h */,
+				3947644323ED9E53001D791B /* TextTrackingSketchTool.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -355,6 +365,8 @@
 				39F70D7523EC591D00E88E29 /* RectangleTrackingSketchTool.m in Sources */,
 				6B37E24D1E9D4257006883C6 /* PenSketchTool.m in Sources */,
 				6B37E24A1E9D4257006883C6 /* EraserSketchTool.m in Sources */,
+				3947644123ED9D91001D791B /* TextSketchTool.m in Sources */,
+				3947644423ED9E53001D791B /* TextTrackingSketchTool.m in Sources */,
 				6B37E23B1E9D4235006883C6 /* SketchFile.m in Sources */,
 				39F70D6E23EC492C00E88E29 /* ShapeTrackingSketchTool.m in Sources */,
 				39F70D6B23EC445600E88E29 /* CircleSketchTool.m in Sources */,
